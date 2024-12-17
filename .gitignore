@@ -1,3 +1,2 @@
 registry
-main.py
-not_tested_main.py
+*.py
