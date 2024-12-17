@@ -9,7 +9,7 @@ services:
       backend:
         ipv4_address: 172.20.0.5
     env_file:
-      - ~/.env
+      - /home/makaron/.env
     environment:
       MYSQL_HOST: db
       MYSQL_USER: ${MYSQL_USER}
@@ -23,7 +23,7 @@ services:
       backend:
         ipv4_address: 172.20.0.10
     env_file:
-      - ~/.env
+      - /home/makaron/.env
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
