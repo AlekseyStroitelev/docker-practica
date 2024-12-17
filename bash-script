@@ -3,8 +3,6 @@ REPO="https://github.com/AlekseyStroitelev/docker-practica.git"
 DIR="/opt/repo"
 apt-get update
 apt-get upgrade -y
-apt-get install docker.io -y
-apt-get install docker-compose-v2 -y
 apt-get install git -y
 mkdir /opt/repo
 git clone "$REPO" "$DIR"
