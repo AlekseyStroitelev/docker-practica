@@ -10,12 +10,12 @@ sudo apt  install docker-compose  # version 1.25.0-1
 
 See 'snap info docker' for additional versions.
 ```
-![0_1](https://github.com/AlekseyStroitelev/Homework/blob/main/Virtualization/05-virt-04-docker-in-practice/screenshots/docker0_1.png)
+![0_1](https://github.com/AlekseyStroitelev/docker-practica/tree/main/screenshots/docker0_1.png)
 
 В случае наличия установленного в системе ```docker-compose``` - удалите его.  
 2. Убедитесь что у вас УСТАНОВЛЕН ```docker compose```(без тире) версии не менее v2.24.X, для это выполните команду ```docker compose version```  
 
-![0_2](https://github.com/AlekseyStroitelev/Homework/blob/main/Virtualization/05-virt-04-docker-in-practice/screenshots/docker0_2.png)
+![0_2](https://github.com/AlekseyStroitelev/docker-practica/tree/main/screenshots/docker0_2.png)
 ---
 
 ## Задача 1
@@ -38,7 +38,7 @@ See 'snap info docker' for additional versions.
 
 ### Ответ:
 
-[vulnerabilities](https://github.com/AlekseyStroitelev/Homework/blob/main/Virtualization/05-virt-04-docker-in-practice/scan_result/vulnerabilities.csv)
+[vulnerabilities](https://github.com/AlekseyStroitelev/docker-practica/tree/main/scan_result/vulnerabilities.csv)
 
 ## Задача 3
 1. Изучите файл "proxy.yaml"
@@ -52,9 +52,9 @@ See 'snap info docker' for additional versions.
 
 2. Запустите проект локально с помощью docker compose , добейтесь его стабильной работы: команда ```curl -L http://127.0.0.1:8090``` должна возвращать в качестве ответа время и локальный IP-адрес. Если сервисы не стартуют воспользуйтесь командами: ```docker ps -a ``` и ```docker logs <container_name>``` . Если вместо IP-адреса вы получаете ```NULL``` --убедитесь, что вы шлете запрос на порт ```8090```, а не 5000.
 
-![3_2_1](https://github.com/AlekseyStroitelev/Homework/blob/main/Virtualization/05-virt-04-docker-in-practice/screenshots/docker3_2_1.png)
+![3_2_1](https://github.com/AlekseyStroitelev/docker-practica/tree/main/screenshots/docker3_2_1.png)
 
-![3_2_2](https://github.com/AlekseyStroitelev/Homework/blob/main/Virtualization/05-virt-04-docker-in-practice/screenshots/docker3_2_2.png)
+![3_2_2](https://github.com/AlekseyStroitelev/docker-practica/tree/main/screenshots/docker3_2_2.png)
 
 5. Подключитесь к БД mysql с помощью команды ```docker exec -ti <имя_контейнера> mysql -uroot -p<пароль root-пользователя>```(обратите внимание что между ключем -u и логином root нет пробела. это важно!!! тоже самое с паролем) . Введите последовательно команды (не забываем в конце символ ; ): ```show databases; use <имя вашей базы данных(по-умолчанию example)>; show tables; SELECT * from requests LIMIT 10;```.
 
@@ -62,7 +62,7 @@ See 'snap info docker' for additional versions.
 
 ### Ответ:
 
-![3_4](https://github.com/AlekseyStroitelev/Homework/blob/main/Virtualization/05-virt-04-docker-in-practice/screenshots/docker3_4.png)
+![3_4](https://github.com/AlekseyStroitelev/docker-practica/tree/main/screenshots/docker3_4.png)
 
 ## Задача 4
 1. Запустите в Yandex Cloud ВМ (вам хватит 2 Гб Ram).
@@ -93,7 +93,7 @@ cd "$DIR"
 docker compose up -d
 ```
 
-![4](https://github.com/AlekseyStroitelev/Homework/blob/main/Virtualization/05-virt-04-docker-in-practice/screenshots/docker4.png)
+![4](https://github.com/AlekseyStroitelev/docker-practica/tree/main/screenshots/docker4.png)
 
 https://github.com/AlekseyStroitelev/docker-practica/blob/main/README.md
 
