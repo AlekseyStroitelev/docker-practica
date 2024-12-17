@@ -102,6 +102,23 @@ https://github.com/AlekseyStroitelev/docker-practica/blob/main/README.md
 Скачайте docker образ ```hashicorp/terraform:latest``` и скопируйте бинарный файл ```/bin/terraform``` на свою локальную машину, используя dive и docker save.
 Предоставьте скриншоты  действий.
 
+### Ответ:
+
+С помощью `dive` находим и запоминаем нужный слой в котором фигурирует наш /bin/terraform.
+Далее с помощью `docker save` сохраняем образ в виде `*.tar` - файла, распаковываем, в полученном результате ищем директорию /blobs/sha256 и вней находим нужный слой. Еще раз с помощью утилиты `tar` распаковываем теперь уже наш конкретный слой и в результате видим `/bin/terraform`
+
+![6_1](https://github.com/AlekseyStroitelev/docker-practica/blob/main/screenshots/docker6_1.png)
+
+![6_2](https://github.com/AlekseyStroitelev/docker-practica/blob/main/screenshots/docker6_2.png)
+
 ## Задача 6.1
 Добейтесь аналогичного результата, используя docker cp.  
 Предоставьте скриншоты  действий.
+
+### Ответ:
+
+Запускаем контейнер, смотрим его ID и с помощью `docker cp` копируем нужный файл в нужное место.
+
+![6.1](https://github.com/AlekseyStroitelev/docker-practica/blob/main/screenshots/docker6.1.png)
+
+---
