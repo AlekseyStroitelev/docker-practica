@@ -1,0 +1,9 @@
+*/haproxy
+*/nginx
+*/scan_result
+*/.*
+*/bash*
+*.yaml
+*.md
+registry
+not_tested_main.py
