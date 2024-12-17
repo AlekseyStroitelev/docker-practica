@@ -74,11 +74,30 @@ See 'snap info docker' for additional versions.
 5. (Необязательная часть) Дополнительно настройте remote ssh context к вашему серверу. Отобразите список контекстов и результат удаленного выполнения ```docker ps -a```
 6. В качестве ответа повторите  sql-запрос и приложите скриншот с данного сервера, bash-скрипт и ссылку на fork-репозиторий.
 
-## Задача 5 (*)
-1. Напишите и задеплойте на вашу облачную ВМ bash скрипт, который произведет резервное копирование БД mysql в директорию "/opt/backup" с помощью запуска в сети "backend" контейнера из образа ```schnitzler/mysqldump``` при помощи ```docker run ...``` команды. Подсказка: "документация образа."
-2. Протестируйте ручной запуск
-3. Настройте выполнение скрипта раз в 1 минуту через cron, crontab или systemctl timer. Придумайте способ не светить логин/пароль в git!!
-4. Предоставьте скрипт, cron-task и скриншот с несколькими резервными копиями в "/opt/backup"
+### Ответ:
+
+Что бы не палить значения переменных в git'e, предварительно закинул файл .env руками.
+
+Скрипт дилетантский, но худо-бедно отработал:
+
+```
+#!/bin/bash
+REPO="https://github.com/AlekseyStroitelev/docker-practica.git"
+DIR="/opt/repo"
+apt-get update
+apt-get upgrade -y
+apt-get install docker.io -y
+apt-get install docker-compose-v2 -y
+apt-get install git -y
+mkdir /opt/repo
+git clone "$REPO" "$DIR"
+cd "$DIR"
+docker compose up -d
+```
+
+![4](https://github.com/AlekseyStroitelev/Homework/blob/main/Virtualization/05-virt-04-docker-in-practice/screenshots/docker4.png)
+
+https://github.com/AlekseyStroitelev/docker-practica/blob/main/README.md
 
 ## Задача 6
 Скачайте docker образ ```hashicorp/terraform:latest``` и скопируйте бинарный файл ```/bin/terraform``` на свою локальную машину, используя dive и docker save.
@@ -86,12 +105,4 @@ See 'snap info docker' for additional versions.
 
 ## Задача 6.1
 Добейтесь аналогичного результата, используя docker cp.  
-Предоставьте скриншоты  действий .
-
-## Задача 6.2 (**)
-Предложите способ извлечь файл из контейнера, используя только команду docker build и любой Dockerfile.  
-Предоставьте скриншоты  действий .
-
-## Задача 7 (***)
-Запустите ваше python-приложение с помощью runC, не используя docker или containerd.  
 Предоставьте скриншоты  действий .
